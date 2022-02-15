@@ -5,29 +5,28 @@ import numpy as np
 image = cv2.imread("messi.jpg")
 image2 = cv2.imread("logo.jpg")
 
-satir, sutun, kanal = resim2.shape
-roi = resim1[0:satir,0:sutun]
+line, column, canal = resim2.shape
+roi = image[0:line,0:line]
 
-resim2gri = cv2.cvtColor(resim2,cv2.COLOR_BGR2GRAY)
-cv2.imshow("Gri Logo",resim2gri)
+image2_grey = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
+cv2.imshow("Grey Logo", image2_grey)
 
-ret, mask = cv2.threshold(resim2gri,10,255,cv2.THRESH_BINARY)
-cv2.imshow("Maske",mask)
+ret, mask = cv2.threshold(image2_grey, 10, 255, cv2.THRESH_BINARY)
+cv2.imshow("Mask", mask)
 
-maskTers= cv2.bitwise_not(mask)
-cv2.imshow("Maskenin Tersi",maskTers)
+mask_reverse = cv2.bitwise_not(mask)
+cv2.imshow("Reverse of Mask", mask_reverse)
 
-resim1_bg = cv2.bitwise_and(roi,roi,mask = maskTers)
-cv2.imshow("resim1_bg",resim1_bg)
+image_bg = cv2.bitwise_and(roi, roi, mask = mask_reverse)
+cv2.imshow("resim1_bg",image_bg)
 
-resim2_fg =cv2.bitwise_and(resim2,resim2,mask = mask)
-cv2.imshow("im2_fg",resim2_fg)
+image2_fg =cv2.bitwise_and(image2, image2, mask = mask)
+cv2.imshow("im2_fg", image2_fg)
 
-son_resim = cv2.add(resim1_bg,resim2_fg)
-resim1[0:satir,0:sutun] = son_resim
+last_image = cv2.add(image_bg, image2_fg)
+image[0:line,0:column] = last_image
 
-cv2.imshow("son resim",resim1)
-
+cv2.imshow("Image", image)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
