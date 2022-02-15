@@ -6,7 +6,7 @@ image = cv2.imread("messi.jpg")
 image2 = cv2.imread("logo.jpg")
 
 line, column, canal = resim2.shape
-roi = image[0:line,0:line]
+roi = image[0:line, 0:column]
 
 image2_grey = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
 cv2.imshow("Grey Logo", image2_grey)
