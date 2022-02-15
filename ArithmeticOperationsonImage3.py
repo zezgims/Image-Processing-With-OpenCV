@@ -20,7 +20,7 @@ cv2.imshow("Reverse of Mask", mask_reverse)
 image_bg = cv2.bitwise_and(roi, roi, mask = mask_reverse)
 cv2.imshow("Image_bg",image_bg)
 
-image2_fg =cv2.bitwise_and(image2, image2, mask = mask)
+image2_fg = cv2.bitwise_and(image2, image2, mask = mask)
 cv2.imshow("Image2_fg", image2_fg)
 
 last_image = cv2.add(image_bg, image2_fg)
