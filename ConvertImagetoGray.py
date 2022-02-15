@@ -3,12 +3,10 @@ import cv2
 import numpy as np
 
 image = cv2.imread("image.jpg")     
-grey = cv2.imread("image.jpg", 0)      
-ret, black = cv2.threshold(grey, 100, 255, cv2.THRESH_BINARY)        
+grey = cv2.imread("image.jpg", 0)           
 
 cv2.imshow("Image", image)
 cv2.imshow("Grey Image", grey)
-cv2.imshow("Black and White Image", black)
 
 #Converting image to gray with non-ready function
 
