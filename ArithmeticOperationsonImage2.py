@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-image = cv2.imread("image.jpg")
+image = cv2.imread("image2.jpg")
 image2 = cv2.imread("logo.jpg")
 
 sum = cv2.add(image, image2)                            #Adds pictures together equally.
