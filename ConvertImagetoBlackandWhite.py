@@ -20,8 +20,8 @@ for i in range(0,x):
         else:
             black2[i][j] = 255
 
-cv2.imshow("Black and White Image",black)
-cv2.imshow("Black and White Image2",black2)
+cv2.imshow("Black and White Image", black)
+cv2.imshow("Black and White Image2", black2)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
