@@ -6,7 +6,7 @@ image = cv2.imread("image.jpg")
 grey = cv2.imread("image.jpg", 0)   
 ret, black = cv2.threshold(grey, 100, 255, cv2.THRESH_BINARY)   
 
-#Converting image to black and white with non-ready function
+#Converting image to black and white with non-ready function.
 
 x, y = grey.shape      
 black2 = np.zeros((x,y), "uint8")
